@@ -171,12 +171,12 @@ var BannerVars = []string{
 	"BUILD_ID",
 	"OUT_DIR",
 	"SOONG_SDK_SNAPSHOT_TARGET_BUILD_RELEASE",
+	"PRODUCT_SOONG_NAMESPACES",
 }
 
 func Banner(config Config, make_vars map[string]string) string {
 	b := &bytes.Buffer{}
 
-	fmt.Fprintln(b, "============================================")
 	for _, name := range BannerVars {
 		if make_vars[name] != "" {
 			fmt.Fprintf(b, "%s=%s\n", name, make_vars[name])
@@ -278,7 +278,6 @@ func runMakeProductConfig(ctx Context, config Config) {
 		"HOST_CROSS_ARCH",
 		"HOST_CROSS_2ND_ARCH",
 		"HOST_BUILD_TYPE",
-		"PRODUCT_SOONG_NAMESPACES",
 
 		"DEFAULT_WARNING_BUILD_MODULE_TYPES",
 		"DEFAULT_ERROR_BUILD_MODULE_TYPES",
