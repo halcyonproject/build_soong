@@ -269,6 +269,9 @@ com\.nothing\..*
 com\.nvidia
 com\.nvidia\..*
 
+# LMOFreeform
+com\.libremobileos\..*
+
 # QC adds
 com.qualcomm.qti
 com.quicinc.tcmiface
