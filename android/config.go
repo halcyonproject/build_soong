@@ -1052,7 +1052,11 @@ func (c *config) ExtraOtaKeys(ctx PathContext, recovery bool) []SourcePath {
 }
 
 func (c *config) BuildKeys() string {
-	return "release-keys"
+	defaultCert := String(c.productVariables.DefaultAppCertificate)
+	if defaultCert == "" || defaultCert == filepath.Join(testKeyDir, "testkey") {
+		return "test-keys"
+	}
+	return "dev-keys"
 }
 
 func (c *config) ApexKeyDir(ctx ModuleContext) SourcePath {
