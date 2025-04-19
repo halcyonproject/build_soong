@@ -29,6 +29,7 @@ var archVariants = map[ArchType][]string{
 		"armv9-2a",
 	},
 	X86: {
+		"alderlake",
 		"amberlake",
 		"atom",
 		"broadwell",
@@ -53,6 +54,7 @@ var archVariants = map[ArchType][]string{
 		"x86_64",
 	},
 	X86_64: {
+		"alderlake",
 		"amberlake",
 		"broadwell",
 		"goldmont",
@@ -111,9 +113,6 @@ var cpuVariants = map[ArchType][]string{
 }
 
 var archFeatures = map[ArchType][]string{
-	Arm: {
-		"neon",
-	},
 	Arm64: {
 		"dotprod",
 	},
@@ -143,17 +142,6 @@ var archFeatures = map[ArchType][]string{
 }
 
 var androidArchFeatureMap = map[ArchType]map[string][]string{
-	Arm: {
-		"armv7-a-neon": {
-			"neon",
-		},
-		"armv8-a": {
-			"neon",
-		},
-		"armv8-2a": {
-			"neon",
-		},
-	},
 	Arm64: {
 		"armv8-2a-dotprod": {
 			"dotprod",
@@ -166,6 +154,16 @@ var androidArchFeatureMap = map[ArchType]map[string][]string{
 		},
 	},
 	X86: {
+		"alderlake": {
+			"ssse3",
+			"sse4",
+			"sse4_1",
+			"sse4_2",
+			"avx",
+			"avx2",
+			"aes_ni",
+			"popcnt",
+		},
 		"amberlake": {
 			"ssse3",
 			"sse4",
@@ -340,6 +338,16 @@ var androidArchFeatureMap = map[ArchType]map[string][]string{
 			"sse4",
 			"sse4_1",
 			"sse4_2",
+			"popcnt",
+		},
+		"alderlake": {
+			"ssse3",
+			"sse4",
+			"sse4_1",
+			"sse4_2",
+			"avx",
+			"avx2",
+			"aes_ni",
 			"popcnt",
 		},
 		"amberlake": {
